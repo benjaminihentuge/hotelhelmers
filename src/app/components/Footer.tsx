@@ -5,10 +5,9 @@ import Link from "next/link";
 
 const Footer = () => {
 
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
-    setMenuOpen(false);
+    
   };
 
     return (
