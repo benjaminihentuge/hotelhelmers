@@ -11,7 +11,7 @@ const HorizontalScrollSection = () => {
         <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/section1.jpg"
+              src="/images/hero.jpeg"
               alt="Our Story"
               className="w-full h-2/3 object-cover"
             />
@@ -29,7 +29,7 @@ const HorizontalScrollSection = () => {
         <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/section2.jpg"
+              src="/images/hero.jpeg"
               alt="Our Mission"
               className="w-full h-2/3 object-cover"
             />
@@ -47,7 +47,7 @@ const HorizontalScrollSection = () => {
         <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/section3.jpg"
+              src="/images/hero.jpeg"
               alt="Our Vision"
               className="w-full h-2/3 object-cover"
             />
@@ -65,7 +65,7 @@ const HorizontalScrollSection = () => {
         <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
-              src="/images/section4.jpg"
+              src="/images/hero.jpeg"
               alt="Our Values"
               className="w-full h-2/3 object-cover"
             />
