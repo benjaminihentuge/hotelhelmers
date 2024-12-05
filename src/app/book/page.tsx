@@ -1,14 +1,25 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { FaCalendarAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const BookingPage = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000); // Close the popup after 3 seconds
+  };
+
   return (
-    <div className="min-h-screen bg-gray-800 text-white flex justify-center items-center">
+    <div className="min-h-screen bg-gradient text-white flex justify-center items-center">
       <div className="container mx-auto px-4 md:max-w-4xl mb-10 mt-10">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start animate-fade-in">
           {/* Left Section: Booking Form */}
-          <div className="bg-gray-900 p-4 md:p-6 rounded-lg shadow-lg">
+          <div className="bg-glass p-4 md:p-6 rounded-xl shadow-xl">
             <h2 className="text-xl md:text-2xl font-bold mb-4">Book Your Stay</h2>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Accommodation Type */}
               <div>
                 <p className="text-sm font-medium mb-2">Accommodation Type</p>
@@ -25,22 +36,26 @@ const BookingPage = () => {
               </div>
 
               {/* Check-In and Check-Out Dates */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Check-In</label>
-                  <input
-                    type="date"
-                    className="w-full bg-gray-800 p-2 rounded text-gray-200"
-                  />
+             
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
+                    <label className="block text-sm font-medium mb-2">Check-In</label>
+                    <FaCalendarAlt className="absolute mt-3 left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <input
+                      type="date"
+                      className="w-full bg-gray-800 p-2 pl-10 rounded text-gray-200"
+                    />
+                  </div>
+                  <div className="relative">
+                    <label className="block text-sm font-medium mb-2">Check-Out</label>
+                    <FaCalendarAlt className="absolute mt-3 left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                    <input
+                      type="date"
+                      className="w-full bg-gray-800 p-2 pl-10 rounded text-gray-200"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Check-Out</label>
-                  <input
-                    type="date"
-                    className="w-full bg-gray-800 p-2 rounded text-gray-200"
-                  />
-                </div>
-              </div>
+
 
               {/* Guests Information */}
               <div className="grid grid-cols-2 gap-4">
@@ -65,24 +80,20 @@ const BookingPage = () => {
               </div>
 
               {/* Contact Information */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Email Address
-                </label>
+              <div className="relative">
+                <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
                   type="email"
                   placeholder="Your Email Address"
-                  className="w-full bg-gray-800 p-2 rounded text-gray-200"
+                  className="w-full bg-gray-800 p-2 pl-10 rounded text-gray-200"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Phone Number
-                </label>
+              <div className="relative">
+                <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
                   type="tel"
                   placeholder="Your Phone Number"
-                  className="w-full bg-gray-800 p-2 rounded text-gray-200"
+                  className="w-full bg-gray-800 p-2 pl-10 rounded text-gray-200"
                 />
               </div>
 
@@ -110,7 +121,7 @@ const BookingPage = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-yellow-500 text-black px-4 py-2 rounded font-medium w-full"
+                className="bg-red-500 text-black px-4 py-2 rounded font-medium w-full animate-pulse"
               >
                 Submit
               </button>
@@ -118,7 +129,7 @@ const BookingPage = () => {
           </div>
 
           {/* Right Section: Accommodation Card */}
-          <div className="bg-gray-900 h-[400px] rounded-lg shadow-lg">
+          <div className="bg-glass h-[400px] rounded-xl shadow-xl hover:scale-105 transition-transform duration-300">
             <div className="relative h-full">
               {/* Hotel Image */}
               <img
@@ -127,9 +138,7 @@ const BookingPage = () => {
                 className="w-full h-full object-cover rounded"
               />
               {/* Address Overlay */}
-              <div
-                className="absolute bottom-0 left-0 right-0 bg-black/10 z-10 p-4 rounded-b"
-              >
+              <div className="absolute bottom-0 left-0 right-0 bg-black/20 z-10 p-4 rounded-b">
                 <h3 className="text-lg md:text-xl font-bold">Asokoro</h3>
                 <span className="text-sm text-yellow-400">Hotel</span>
                 <p className="text-gray-400 text-sm mt-2">
@@ -140,6 +149,13 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Booking Confirmation Popup */}
+      {showPopup && (
+        <div className="fixed top-5 right-5 bg-green-500 text-white px-4 py-2 rounded shadow-lg animate-fade-in">
+          Booking Confirmed!
+        </div>
+      )}
     </div>
   );
 };
