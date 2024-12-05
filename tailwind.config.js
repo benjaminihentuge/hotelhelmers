@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',  // Make sure this matches your folder structure
+    './src/**/*.{js,ts,jsx,tsx}', // Ensure this matches your folder structure
   ],
   theme: {
-    extend: {},
+    extend: {
+      // Add customizations if needed
+    },
   },
-  plugins: [],
-}
+  plugins: [
+    require('tailwind-scrollbar-hide'), // Include the plugin for hiding scrollbars
+  ],
+};
