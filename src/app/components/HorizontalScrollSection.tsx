@@ -18,7 +18,7 @@ const HorizontalScrollSection = () => {
             <div className="p-4">
               <h2 className="text-2xl font-bold">Our Story</h2>
               <p className="text-sm mt-2">
-                Step into the narrative of Hotel 2020, a tale deeply intertwined
+                Step into the narrative of Hotel Helmers, a tale deeply intertwined
                 with a passion for excellence and luxury.
               </p>
             </div>
@@ -36,7 +36,7 @@ const HorizontalScrollSection = () => {
             <div className="p-4">
               <h2 className="text-2xl font-bold">Our Mission</h2>
               <p className="text-sm mt-2">
-                At Hotel 2020, our mission transcends ordinary hospitality,
+                At Hotel Helmers, our mission transcends ordinary hospitality,
                 creating memorable experiences.
               </p>
             </div>
@@ -54,7 +54,7 @@ const HorizontalScrollSection = () => {
             <div className="p-4">
               <h2 className="text-2xl font-bold">Our Vision</h2>
               <p className="text-sm mt-2">
-                A future where Hotel 2020 remains a symbol of luxury and
+                A future where Hotel Helmers remains a symbol of luxury and
                 innovation in hospitality.
               </p>
             </div>
@@ -73,7 +73,7 @@ const HorizontalScrollSection = () => {
               <h2 className="text-2xl font-bold">Our Values</h2>
               <p className="text-sm mt-2">
                 Integrity, innovation, and exceptional service define who we are
-                at Hotel 2020.
+                at Hotel Helmers.
               </p>
             </div>
           </div>
