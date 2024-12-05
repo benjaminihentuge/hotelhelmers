@@ -1,4 +1,16 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+
 const Footer = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
     return (
       <footer className="bg-black py-10 px-6 lg:px-20 text-gray-800">
         <div className="container mx-auto grid md:grid-cols-4 gap-8">
@@ -11,9 +23,24 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-semibold mb-4">Company</h2>
             <ul className="space-y-2">
-              <li>About Us</li>
+              <li>
+              <Link
+              href="/about"
+              onClick={handleLinkClick}
+              className="block px-4 py-2 lg:p-0 hover:text-red-500"
+              >
+                About Us
+              </Link>
+              </li>
+              
               <li>Legal Information</li>
-              <li>Contact Us</li>
+              <Link
+              href="/contact"
+              onClick={handleLinkClick}
+              className="block px-4 py-2 lg:p-0 hover:text-red-500"
+              >
+                Contact Us
+              </Link>
             </ul>
           </div>
   

@@ -35,7 +35,7 @@ const ContactPage = () => {
         <h2 className="text-3xl font-bold">Contact The Reception</h2>
         <p className="text-gray-400 mt-2">
           For assistance, call us at +234 813 948 6554 or email us at{" "}
-          <a href="mailto:hotelhelmers@gmail.com" className="text-yellow-500">
+          <a href="mailto:hotelhelmers@gmail.com" className="text-red-500">
             hotelhelmers@gmail.com
           </a>
         </p>

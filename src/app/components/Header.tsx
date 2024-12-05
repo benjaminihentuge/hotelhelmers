@@ -47,14 +47,14 @@ const Header = () => {
         } absolute top-full left-0 w-full bg-black lg:static lg:w-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:space-x-4 z-50 transition-all duration-300 ease-in-out`}
       >
         <Link
-          href="#about"
+          href="/about"
           onClick={handleLinkClick}
           className="block px-4 py-2 lg:p-0 hover:text-red-500"
         >
           About Us
         </Link>
         <Link
-          href="#rooms"
+          href="/rooms"
           onClick={handleLinkClick}
           className="block px-4 py-2 lg:p-0 hover:text-red-500"
         >
