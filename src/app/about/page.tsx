@@ -1,7 +1,10 @@
 "use client";
 
 import React from "react";
-import HorizontalScrollSection from "@/app/components/HorizontalScrollSection";
+
+
+
+import HorizontalScrollSection from '@/app/components/HorizontalScrollSection';
 
 const AboutPage = () => {
   return (

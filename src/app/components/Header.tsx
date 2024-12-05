@@ -68,7 +68,7 @@ const Header = () => {
           Contact
         </Link>
         <Link
-          href="#book"
+          href="/book"
           onClick={handleLinkClick}
           className="block bg-red-500 text-white px-8 py-4 text-lg font-bold rounded-lg lg:ml-4 lg:px-4 lg:py-2 hover:bg-red-600"
         >

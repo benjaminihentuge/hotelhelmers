@@ -5,10 +5,11 @@ import React from "react";
 const HorizontalScrollSection = () => {
   return (
     <div className="bg-black text-white">
-      <h1 className="text-4xl font-bold text-center p-8">Our Highlights</h1>
-      <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+      <h1 className="text-4xl font-bold text-center py-8">Our Highlights</h1>
+      <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide relative">
         {/* Section 1 */}
-        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
+        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start px-6 relative">
+          <div className="absolute inset-0 bg-gray-800 rounded-xl shadow-xl transform translate-y-6 translate-x-6 z-[-10]"></div>
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
               src="/images/hero.jpeg"
@@ -26,7 +27,8 @@ const HorizontalScrollSection = () => {
         </div>
 
         {/* Section 2 */}
-        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
+        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start px-6 relative">
+          <div className="absolute inset-0 bg-gray-800 rounded-xl shadow-xl transform translate-y-6 translate-x-6 z-[-10]"></div>
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
               src="/images/hero.jpeg"
@@ -44,7 +46,8 @@ const HorizontalScrollSection = () => {
         </div>
 
         {/* Section 3 */}
-        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
+        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start px-6 relative">
+          <div className="absolute inset-0 bg-gray-800 rounded-xl shadow-xl transform translate-y-6 translate-x-6 z-[-10]"></div>
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
               src="/images/hero.jpeg"
@@ -62,7 +65,8 @@ const HorizontalScrollSection = () => {
         </div>
 
         {/* Section 4 */}
-        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start p-4">
+        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start px-6 relative">
+          <div className="absolute inset-0 bg-gray-800 rounded-xl shadow-xl transform translate-y-6 translate-x-6 z-[-10]"></div>
           <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
             <img
               src="/images/hero.jpeg"
