@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 const sendBookingEmail = async (bookingDetails) => {
   // Use environment variables for sensitive data
@@ -40,4 +40,4 @@ const sendBookingEmail = async (bookingDetails) => {
   }
 };
 
-module.exports = sendBookingEmail;
+export default sendBookingEmail;

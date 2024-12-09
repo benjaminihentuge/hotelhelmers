@@ -58,9 +58,9 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-semibold mb-4">Contact Info</h2>
             <ul className="space-y-2">
-              <li>Phone: 1234567890</li>
-              <li>Email: company@email.com</li>
-              <li>Location: 100 Smart Street, LA, USA</li>
+              <li>Phone: +234 813 948 6554</li>
+              <li>Email: hotelhelmers@gmail.com</li>
+              <li>Address: Plot A16, Gen. Mohd U. Gololo way, Extension, off Linda Chalker Street, Asokoro, Abuja 900110, Federal Capital Territory</li>
             </ul>
           </div>
         </div>

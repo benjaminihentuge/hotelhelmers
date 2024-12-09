@@ -50,7 +50,7 @@ const Hero = () => (
           <img
             src="/images/hero2.jpg"
             alt="Hotel interior"
-            className="w-full h-full object-cover rounded"
+            className="w-full h-full object-cover rounded-md"
           />
         </div>
       </div>
