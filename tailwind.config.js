@@ -5,7 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // Add customizations if needed
+      colors: {
+        'custom-brown': '#3b372f',
+        'rose-white': '#fffafa',
+      },
     },
   },
   plugins: [

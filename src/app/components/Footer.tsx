@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
     return (
-      <footer className="bg-black py-10 px-6 lg:px-20 text-gray-800">
+      <footer className="bg-black py-10 px-6 lg:px-20 text-gray-500">
         <div className="container mx-auto grid md:grid-cols-4 gap-8">
           {/* Logo Section */}
           <div>

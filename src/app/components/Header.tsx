@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-black text-white p-4 flex justify-between items-center sticky top-0 z-50">
+    <header className="bg-black text-gray-500 p-4 flex justify-between items-center sticky top-0 z-50">
       {/* Logo */}
       <Link href="/" className="text-2xl font-bold">
         Hotel Helmers
@@ -19,7 +19,7 @@ const Header = () => {
 
       {/* Hamburger Menu for Mobile */}
       <button
-        className="lg:hidden block text-white focus:outline-none"
+        className="lg:hidden block text-gray-500 focus:outline-none"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle navigation menu"
         aria-expanded={menuOpen}
@@ -54,11 +54,11 @@ const Header = () => {
           About Us
         </Link>
         <Link
-          href="/rooms"
+          href="/gallery"
           onClick={handleLinkClick}
           className="block px-4 py-2 lg:p-0 hover:text-red-500"
         >
-          Rooms
+          Gallery
         </Link>
         <Link
           href="/contact"
