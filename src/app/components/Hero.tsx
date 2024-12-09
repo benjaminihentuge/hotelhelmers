@@ -7,13 +7,13 @@ const Hero = () => (
       className="relative text-center bg-cover bg-center h-[500px] flex items-center justify-center"
       style={{ backgroundImage: 'url("images/hero.jpeg")' }} // Updated background image
     >
-      <div className="bg-black bg-opacity-10 text-white p-6 rounded max-w-md">
+      <div className="bg-black bg-opacity-5 text-white p-6 rounded max-w-md">
         <h1 className="text-4xl font-bold">Hotel Helmers</h1>
         <p className="text-lg mt-2">Comfort and luxury at its finest!</p>
 
         {/* Book Now Button with Link */}
         <Link href="/book">
-          <button className="mt-4 bg-red-500 px-6 py-3 text-lg font-semibold rounded hover:bg-red-600 transition-colors">
+          <button className="mt-4 bg-red-500 px-10 py-2 text-lg font-semibold rounded hover:bg-red-600 transition-colors">
             Book Now
           </button>
         </Link>
