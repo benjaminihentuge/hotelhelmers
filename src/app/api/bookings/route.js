@@ -4,7 +4,7 @@ export async function POST(req) {
   try {
     const formData = await req.json();
 
-    // Validate required fields (basic validation)
+    // Validate required fields
     const {
       email,
       accommodation,
@@ -17,15 +17,18 @@ export async function POST(req) {
     } = formData;
 
     if (!email || !checkInDate || !checkOutDate || !termsAccepted) {
-      return new Response("Missing required fields", { status: 400 });
+      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     // Configure Nodemailer
     const transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE,
+      service: process.env.EMAIL_SERVICE, // e.g., "gmail"
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, // Your email address
+        pass: process.env.EMAIL_PASS, // Your email password or app-specific password
       },
     });
 
@@ -52,12 +55,23 @@ We look forward to hosting you!`,
     await transporter.sendMail(mailOptions);
 
     // Respond to the client
-    return new Response(JSON.stringify({ success: true, message: "Booking confirmed and email sent." }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ success: true, message: "Booking confirmed and email sent." }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (error) {
     console.error("Error processing booking:", error);
-    return new Response("Failed to process booking", { status: 500 });
+
+    // Respond with a generic error message
+    return new Response(
+      JSON.stringify({ error: "Failed to process booking. Please try again." }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   }
 }
