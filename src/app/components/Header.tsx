@@ -46,7 +46,7 @@ const Header = () => {
           menuOpen ? "block" : "hidden"
         } absolute top-full left-0 w-full bg-black lg:static lg:w-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:space-x-4 z-50 transition-all duration-300 ease-in-out`}
       >
-        {["About Us", "Gallery", "Contact"].map((item, index) => (
+        {["about", "Gallery", "Contact"].map((item, index) => (
           <Link
             key={index}
             href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
