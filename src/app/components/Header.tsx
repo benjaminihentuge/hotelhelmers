@@ -46,27 +46,20 @@ const Header = () => {
           menuOpen ? "block" : "hidden"
         } absolute top-full left-0 w-full bg-black lg:static lg:w-auto space-y-4 lg:space-y-0 lg:flex lg:items-center lg:space-x-4 z-50 transition-all duration-300 ease-in-out`}
       >
-        <Link
-          href="/about"
-          onClick={handleLinkClick}
-          className="block px-4 py-2 lg:p-0 hover:text-red-500"
-        >
-          About Us
-        </Link>
-        <Link
-          href="/gallery"
-          onClick={handleLinkClick}
-          className="block px-4 py-2 lg:p-0 hover:text-red-500"
-        >
-          Gallery
-        </Link>
-        <Link
-          href="/contact"
-          onClick={handleLinkClick}
-          className="block px-4 py-2 lg:p-0 hover:text-red-500"
-        >
-          Contact
-        </Link>
+        {["About Us", "Gallery", "Contact"].map((item, index) => (
+          <Link
+            key={index}
+            href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
+            onClick={handleLinkClick}
+            className="block relative px-4 py-2 lg:p-0 hover:text-red-500 group"
+          >
+            {item}
+            <span
+              className="absolute bottom-0 left-0 w-0 h-[2px] bg-red-500 transition-all duration-300 group-hover:w-full"
+              aria-hidden="true"
+            ></span>
+          </Link>
+        ))}
         <Link
           href="/book"
           onClick={handleLinkClick}
