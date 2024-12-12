@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter for redirection
-import { FaCalendarAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import {  FaEnvelope, FaPhone } from "react-icons/fa";
 
 const BookingPage = () => {
   const router = useRouter(); // Initialize router for navigation
@@ -114,7 +114,6 @@ const BookingPage = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
                   <label className="block text-sm font-medium mb-2">Check-In</label>
-                  <FaCalendarAlt className="absolute mt-3 left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                   <input
                     type="date"
                     name="checkInDate"
@@ -125,7 +124,6 @@ const BookingPage = () => {
                 </div>
                 <div className="relative">
                   <label className="block text-sm font-medium mb-2">Check-Out</label>
-                  <FaCalendarAlt className="absolute mt-3 left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                   <input
                     type="date"
                     name="checkOutDate"
