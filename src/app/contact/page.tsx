@@ -12,6 +12,27 @@ import {
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
+
+interface SocialMediaLinkProps {
+  label: string;
+  icon: React.ReactNode;
+  href: string;
+}
+
+const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ label, icon, href }) => {
+  return (
+    <a
+      href={href}
+      className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {icon}
+      <span>{label}</span>
+    </a>
+  );
+};
 
 const ContactPage = () => {
   // Initialize AOS for animations
@@ -23,12 +44,21 @@ const ContactPage = () => {
     <div className="bg-black text-white">
       {/* Hero Image with Parallax Effect */}
       <section
-        className="w-full h-[75vh] bg-cover bg-center bg-fixed hero"
-        style={{
-          backgroundImage: 'url("images/contacthero2.jpg")',
-        }}
-        
-      ></section>
+        className="w-full h-[75vh] relative hero"
+        data-aos="fade-down"
+      >
+        <Image
+          src="/images/contacthero2.webp"
+          alt="Contact Hero"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-4xl font-bold text-white">Get in Touch with Us</h1>
+        </div>
+      </section>
 
       {/* Contact Information */}
       <section className="text-center py-32" data-aos="fade-up">
@@ -99,34 +129,41 @@ const ContactPage = () => {
               Follow Us on Social Media
             </h2>
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaInstagram size={24} className="text-red-500" />
-                <span>Instagram</span>
-              </div>
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaWhatsapp size={24} className="text-red-500" />
-                <span>WhatsApp</span>
-              </div>
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaEnvelope size={24} className="text-red-500" />
-                <span>Email</span>
-              </div>
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaTwitter size={24} className="text-red-500" />
-                <span>Twitter</span>
-              </div>
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaFacebook size={24} className="text-red-500" />
-                <span>Facebook</span>
-              </div>
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaDribbble size={24} className="text-red-500" />
-                <span>Dribbble</span>
-              </div>
-              <div className="flex items-center space-x-4 hover:scale-110 transition-transform duration-300">
-                <FaPhoneAlt size={24} className="text-red-500" />
-                <span>Phone</span>
-              </div>
+              <SocialMediaLink
+                label="Instagram"
+                icon={<FaInstagram size={24} className="text-red-500" />}
+                href="https://instagram.com/hotel2020abj"
+              />
+              <SocialMediaLink
+                label="WhatsApp"
+                icon={<FaWhatsapp size={24} className="text-red-500" />}
+                href="https://wa.me/2348139486554"
+              />
+              <SocialMediaLink
+                label="Email"
+                icon={<FaEnvelope size={24} className="text-red-500" />}
+                href="mailto:hotelhelmers@gmail.com"
+              />
+              <SocialMediaLink
+                label="Twitter"
+                icon={<FaTwitter size={24} className="text-red-500" />}
+                href="https://twitter.com/hotel2020abj"
+              />
+              <SocialMediaLink
+                label="Facebook"
+                icon={<FaFacebook size={24} className="text-red-500" />}
+                href="https://facebook.com/hotel2020abj"
+              />
+              <SocialMediaLink
+                label="Dribbble"
+                icon={<FaDribbble size={24} className="text-red-500" />}
+                href="https://dribbble.com/hotel2020abj"
+              />
+              <SocialMediaLink
+                label="Phone"
+                icon={<FaPhoneAlt size={24} className="text-red-500" />}
+                href="tel:+2347049222264"
+              />
             </div>
           </div>
         </div>
