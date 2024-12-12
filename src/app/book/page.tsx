@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter for redirection
-import {  FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 const BookingPage = () => {
   const router = useRouter(); // Initialize router for navigation
@@ -19,6 +19,13 @@ const BookingPage = () => {
     roomType: "suite1",
     termsAccepted: false,
   });
+
+  const [isClient, setIsClient] = useState(false);  // State to track if it's client-side rendering
+
+  useEffect(() => {
+    // Set the isClient state to true after the component is mounted (only on the client-side)
+    setIsClient(true);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -45,13 +52,35 @@ const BookingPage = () => {
     // Reset error message
     setErrorMessage(null);
 
-    // Check for missing required fields
+    // Extract fields from formData
     const { checkInDate, checkOutDate, email, phone, termsAccepted } = formData;
+
+    // Ensure the code only runs after the component is mounted (client-side)
+    if (!isClient) return;
+
+    // Get today's date
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Ensure the comparison is only for the date
+
+    // Check for missing required fields
     if (!checkInDate || !checkOutDate || !email || !phone) {
       setErrorMessage("Please fill in all required fields.");
       return;
     }
 
+    // Check if the check-in or check-out date is earlier than today
+    if (new Date(checkInDate) < today || new Date(checkOutDate) < today) {
+      setErrorMessage("Dates cannot be earlier than today.");
+      return;
+    }
+
+    // Check if checkout date is before check-in date
+    if (new Date(checkOutDate) < new Date(checkInDate)) {
+      setErrorMessage("Checkout date cannot be earlier than check-in date.");
+      return;
+    }
+
+    // Check if terms and conditions are accepted
     if (!termsAccepted) {
       setErrorMessage("You must agree to the terms and conditions.");
       return;
@@ -263,7 +292,6 @@ const BookingPage = () => {
           Booking Confirmed!
         </div>
       )}
-
     </div>
   );
 };
