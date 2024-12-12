@@ -1,24 +1,33 @@
 import Link from "next/link";
+import Image from "next/image"; // Import Image for optimization
 
 const Hero = () => (
   <>
-    {/* Hero Section */}
-    <section
-      className="relative text-center bg-cover bg-center h-[500px] flex items-center justify-center"
-      style={{ backgroundImage: 'url("images/hero.jpeg")' }} // Updated background image
-    >
-      <div className="bg-black bg-opacity-5 text-white p-6 rounded max-w-md">
-        <h1 className="text-4xl font-bold">Hotel Helmers</h1>
-        <p className="text-lg mt-2">Comfort and luxury at its finest!</p>
+   <section className="relative text-center bg-cover bg-center h-[500px] flex items-center justify-center">
+  {/* Background Image */}
+  <Image
+    src="/images/bar.webp"
+    alt="Hero background"
+    layout="fill"
+    objectFit="cover"
+    quality={75} // Optimize image quality for faster loading
+    className="-z-10" // Ensure it stays behind content
+  />
 
-        {/* Book Now Button with Link */}
-        <Link href="/book">
-          <button className="mt-4 bg-red-500 px-10 py-2 text-lg font-semibold rounded hover:bg-red-600 transition-colors">
-            Book Now
-          </button>
-        </Link>
-      </div>
-    </section>
+  {/* Overlay Content */}
+  <div className="bg-black bg-opacity-0 text-white p-6 rounded max-w-md z-10">
+    <h1 className="text-4xl font-bold">Hotel Helmers</h1>
+    <p className="text-lg mt-2">Comfort and luxury at its finest!</p>
+
+    {/* Book Now Button */}
+    <Link href="/book">
+      <button className="mt-4 bg-red-500 px-10 py-2 text-lg font-semibold rounded hover:bg-red-600 transition-colors">
+        Book Now
+      </button>
+    </Link>
+  </div>
+</section>
+
 
     {/* Section Below the Hero */}
     <section className="bg-gray-900 text-white py-10 px-6 lg:px-20">
@@ -26,31 +35,35 @@ const Hero = () => (
         {/* Text Section */}
         <div>
           <h2 className="text-green-400 text-lg font-semibold">Luxury Redefined</h2>
-          <h3 className="text-3xl text-rose-white font-bold mt-2">Experience the Best in Abuja</h3>
-          <p className="mt-4 text-gray-500 leading-relaxed">
+          <h3 className="text-3xl font-bold mt-2">Experience the Best in Abuja</h3>
+          <p className="mt-4 text-gray-400 leading-relaxed">
             Welcome! Here, we don't do the conventional; we do fun and loyalty...
             Known in the heart of Abuja for spaces, services, food, and drinks
             that bring the magic. If you're a fan of stylish hotels with a true
             tourist experience, you'll be right at home with us.
           </p>
-          <p className="mt-4 text-gray-500 leading-relaxed">
+          <p className="mt-4 text-gray-400 leading-relaxed">
             Hotel Helmers is the perfect destination where sophistication, comfort,
             and quality service are intertwined. Enjoy exceptional service and a
             host of exceptional amenities.
           </p>
 
           {/* Get in Touch Button */}
-          <button className="mt-6 mr-10 px-1 py-3 text-lg font-semibold underline hover:text-red-500 transition-colors">
-            Get in touch
-          </button>
+          <Link href="/contact">
+            <span className="mt-6 inline-block text-lg font-semibold underline hover:text-red-500 transition-colors">
+              Get in touch
+            </span>
+          </Link>
         </div>
 
         {/* Image Section */}
-        <div>
-          <img
-            src="/images/hero2.jpg"
+        <div className="relative w-full h-[400px]">
+          <Image
+            src="/images/hero2.webp"
             alt="Hotel interior"
-            className="w-full h-full object-cover rounded-md"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-md"
           />
         </div>
       </div>
@@ -59,3 +72,4 @@ const Hero = () => (
 );
 
 export default Hero;
+
