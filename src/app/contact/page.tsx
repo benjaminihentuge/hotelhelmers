@@ -43,18 +43,19 @@ const ContactPage = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero Image with Parallax Effect */}
-      <section
-        className="w-full h-[75vh] relative hero"
-        data-aos="fade-down"
-      >
-        <Image
-          src="/images/contacthero2.webp"
-          alt="Contact Hero"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0"
-          priority
-        />
+              <section
+          className="w-full h-[75vh] relative hero"
+          data-aos="fade-down"
+        >
+          <Image
+            src="/images/contacthero2.webp"
+            alt="Contact Hero"
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0"
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 100vw"
+          />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <h1 className="text-4xl font-bold text-white">Get in Touch with Us</h1>
         </div>
