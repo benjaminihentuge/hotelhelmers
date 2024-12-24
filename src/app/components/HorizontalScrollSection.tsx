@@ -64,24 +64,7 @@ const HorizontalScrollSection = () => {
           </div>
         </div>
 
-        {/* Section 4 */}
-        <div className="flex-shrink-0 w-full md:w-1/3 h-[80vh] snap-start px-6 relative">
-          <div className="absolute inset-0 bg-gray-800 rounded-xl shadow-xl transform translate-y-6 translate-x-6 z-[-10]"></div>
-          <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
-            <img
-              src="/images/hero.jpeg"
-              alt="Our Values"
-              className="w-full h-2/3 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-2xl font-bold">Our Values</h2>
-              <p className="text-sm mt-2">
-                Integrity, innovation, and exceptional service define who we are
-                at Hotel Helmers.
-              </p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
