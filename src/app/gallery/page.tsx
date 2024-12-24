@@ -25,9 +25,6 @@ const images: string[] = [
 ];
 
 const GalleryPage: React.FC = () => {
-  const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <div className="container bg-black
