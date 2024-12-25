@@ -35,7 +35,7 @@ const GalleryPage: React.FC = () => {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        slidesPerView={"auto"}
+        slidesPerView={2}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
