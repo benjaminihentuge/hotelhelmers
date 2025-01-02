@@ -134,20 +134,22 @@ body {
 }
 
 @media (max-width: 500px) {
-    .swiper_container {
-        height: auto;
-    }
-    .swiper-slide {
-        width: 100%; /* Dynamic width */
-        max-width: 28rem;
-        height: auto;
-    }
-    .swiper-slide img {
-        width: 100%; /* Dynamic width */
-        max-width: 28rem;
-        height: auto;
-    }
+  .swiper_container {
+      height: auto;
+  }
+  .swiper-slide {
+      width: 100%; /* Dynamic width */
+      max-width: 28rem;
+      height: auto;
+  }
+  .swiper-slide img {
+      width: 20rem!important; /* Dynamic width */
+      max-width: 28rem;
+      height: 18rem !important; /* Set a fixed height */
+      object-fit: cover !important; /* Ensures the image maintains aspect ratio while filling the container */
+  }
 }
+
 
 .swiper-slide img {
     width: 100%; /* Responsive width */

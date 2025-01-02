@@ -27,7 +27,7 @@ const images: string[] = [
 const GalleryPage: React.FC = () => {
 
   return (
-    <div className="container bg-black
+    <div className="container bg-gray-900
     ">
       <h1 className="heading">Hotel Gallery</h1>
       <Swiper
